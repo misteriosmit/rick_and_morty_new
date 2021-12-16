@@ -1,7 +1,12 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty_new/bloc_observable.dart';
 import 'package:rick_and_morty_new/ui/pages/home_page.dart';
 
 void main() {
+  BlocOverrides.runZoned(() => runApp(const MyApp()),
+      blocObserver: CharacterBlocObservable());
+
   runApp(const MyApp());
 }
 
